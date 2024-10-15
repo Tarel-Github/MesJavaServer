@@ -1,0 +1,17 @@
+spring:
+  main:
+    web-application-type: servlet  # 또는 `reactive`로 설정 가능
+
+  datasource:
+    url: jdbc:mariadb://localhost:3306/mes   # MariaDB 데이터베이스 URL (DB 이름: mes)
+    username: root                  # MariaDB 사용자명
+    password: 12345                  # MariaDB 비밀번호
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 자동으로 데이터베이스 스키마를 업데이트 (개발 중에는 `update`, 운영 환경에서는 `validate` 등으로 설정 가능)
+    show-sql: true      # 실행되는 SQL을 로그로 출력 (옵션)
+    properties:
+      hibernate:
+        format_sql: true  # SQL 포맷팅 (옵션)

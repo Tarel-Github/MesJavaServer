@@ -1,0 +1,401 @@
+==================
+====== 스케쥴 관리
+
+    1. 스케쥴 추가
+Post    /api/schedules
+요청:
+{
+    "jobName": "생산 계획 1",
+    "startDate": "2024-10-15",
+    "endDate": "2024-10-20"
+}
+응답:
+{
+    "id": 1,
+    "jobName": "생산 계획 1",
+    "startDate": "2024-10-15",
+    "endDate": "2024-10-20"
+}
+
+
+
+    2. 모든 스케쥴 조회
+Get     /api/schedules
+요청: 없음
+응답:
+[
+    {
+        "id": 1,
+        "jobName": "생산 계획 1",
+        "startDate": "2024-10-15",
+        "endDate": "2024-10-20"
+    },
+    {
+        "id": 2,
+        "jobName": "생산 계획 2",
+        "startDate": "2024-10-17",
+        "endDate": "2024-10-22"
+    }
+]
+
+
+
+    3. 특정 스케줄 조회
+Get     /api/schedules/{id}
+요청: 없음
+응답:
+{
+    "id": 1,
+    "jobName": "생산 계획 1",
+    "startDate": "2024-10-15",
+    "endDate": "2024-10-20"
+}
+
+
+
+    4. 스케쥴 수정
+Put     /api/schedules/{id}
+요청:
+{
+    "jobName": "수정된 생산 계획",
+    "startDate": "2024-10-16",
+    "endDate": "2024-10-22"
+}
+응답:
+{
+    "id": 1,
+    "jobName": "수정된 생산 계획",
+    "startDate": "2024-10-16",
+    "endDate": "2024-10-22"
+}
+
+
+
+    5. 스케쥴 삭제
+Delete  /api/schedules/{id}
+요청: 없음
+응답: 없음
+
+
+==================
+====== 장비 관리
+
+    1. 장비 추가
+Post    /api/equipment
+요청:
+{
+    "name": "3D 프린터",
+    "type": "프린터",
+    "status": "사용 가능"
+}
+응답:
+{
+    "id": 1,
+    "name": "3D 프린터",
+    "type": "프린터",
+    "status": "사용 가능"
+}
+
+
+
+    2. 모든 장비 조회
+GET     /api/equipment
+요청: 없음
+응답:
+[
+    {
+        "id": 1,
+        "name": "3D 프린터",
+        "type": "프린터",
+        "status": "사용 가능"
+    },
+    {
+        "id": 2,
+        "name": "CNC 머신",
+        "type": "머신",
+        "status": "사용 중"
+    }
+]
+
+
+
+    3. 특정 장비 조회
+Get     /api/equipment/{id}
+요청: 없음
+응답:
+{
+    "id": 1,
+    "name": "3D 프린터",
+    "type": "프린터",
+    "status": "사용 가능"
+}
+
+
+
+    4. 장비 수정
+Put     /api/equipment/{id}
+요청:
+{
+    "name": "3D 프린터 Pro",
+    "type": "프린터",
+    "status": "사용 중"
+}
+응답:
+{
+    "id": 1,
+    "name": "3D 프린터 Pro",
+    "type": "프린터",
+    "status": "사용 중"
+}
+
+
+
+    5. 장비 삭제
+Delete  /api/equipment/{id}
+요청: 없음
+응답: 없음
+
+
+==================
+====== 품질 관리
+
+    1. 품질 검사 추가
+Post    /api/quality
+요청:
+{
+    "productId": 1,
+    "inspectionResults": "통과"
+}
+응답:
+{
+    "id": 1,
+    "productId": 1,
+    "inspectionResults": "통과"
+}
+
+
+
+    2. 모든 품질 검사 결과 조회
+Get     /api/quality
+요청: 없음
+응답:
+[
+    {
+        "id": 1,
+        "productId": 1,
+        "inspectionResults": "통과"
+    },
+    {
+        "id": 2,
+        "productId": 2,
+        "inspectionResults": "불합격"
+    }
+]
+
+
+
+    3. 특정 품질 검사 결과 조회
+Get     /api/quality/{id}
+요청: 없음
+응답:
+{
+    "id": 1,
+    "productId": 1,
+    "inspectionResults": "통과"
+}
+
+
+
+Put     /api/quality/{id}
+요청:
+{
+    "productId": 1,
+    "inspectionResults": "불합격"
+}
+응답:
+{
+    "id": 1,
+    "productId": 1,
+    "inspectionResults": "불합격"
+}
+
+
+==================
+====== 재고 관리
+
+
+    1. 재고 항목 추가
+Post    /api/inventory
+요청:
+{
+    "itemName": "PLA 필라멘트",
+    "quantity": 100,
+    "unit": "kg",
+    "location": "창고 1"
+}
+응답:
+{
+    "id": 1,
+    "itemName": "PLA 필라멘트",
+    "quantity": 100,
+    "unit": "kg",
+    "location": "창고 1"
+}
+
+
+
+    2. 모든 재고 항목 조회
+Get     /api/inventory
+요청: 없음
+응답:
+[
+    {
+        "id": 1,
+        "itemName": "PLA 필라멘트",
+        "quantity": 100,
+        "unit": "kg",
+        "location": "창고 1"
+    },
+    {
+        "id": 2,
+        "itemName": "ABS 필라멘트",
+        "quantity": 50,
+        "unit": "kg",
+        "location": "창고 2"
+    }
+]
+
+
+
+    3. 특정 재고 항목 조회
+Get     /api/inventory/{id}
+요청: 없음
+응답:
+{
+    "id": 1,
+    "itemName": "PLA 필라멘트",
+    "quantity": 100,
+    "unit": "kg",
+    "location": "창고 1"
+}
+
+
+
+    4. 재고 항목 수정
+Put     /api/inventory/{id}
+요청:
+{
+    "itemName": "PLA 필라멘트",
+    "quantity": 120,
+    "unit": "kg",
+    "location": "창고 1"
+}
+응답:
+{
+    "id": 1,
+    "itemName": "PLA 필라멘트",
+    "quantity": 120,
+    "unit": "kg",
+    "location": "창고 1"
+}
+
+
+==================
+====== 모니터링 관리
+
+
+    1. 모든 장비 상태 조회
+Get     /api/monitoring/equipment-status
+요청:
+응답:
+[
+    {
+        "equipmentId": 1,
+        "name": "3D 프린터",
+        "status": "사용 중",
+        "currentJob": "생산 계획 1",
+        "startTime": "2024-10-15T10:00:00",
+        "estimatedCompletionTime": "2024-10-15T18:00:00"
+    },
+    {
+        "equipmentId": 2,
+        "name": "CNC 머신",
+        "status": "대기 중",
+        "currentJob": null,
+        "startTime": null,
+        "estimatedCompletionTime": null
+    }
+]
+
+
+
+    2. 특정 장비 상태 조회
+Get     /api/monitoring/equipment-status/{id}
+요청: 없음
+응답:
+{
+    "equipmentId": 1,
+    "name": "3D 프린터",
+    "status": "사용 중",
+    "currentJob": "생산 계획 1",
+    "startTime": "2024-10-15T10:00:00",
+    "estimatedCompletionTime": "2024-10-15T18:00:00"
+}
+
+
+==================
+====== 데이터 추적
+
+    1. 생산기록 조회
+Get     /api/data/production-history
+요청: 없음
+응답:
+[
+    {
+        "jobId": 1,
+        "jobName": "생산 계획 1",
+        "equipmentName": "3D 프린터",
+        "startTime": "2024-10-15T10:00:00",
+        "endTime": "2024-10-15T18:00:00",
+        "status": "완료"
+    },
+    {
+        "jobId": 2,
+        "jobName": "생산 계획 2",
+        "equipmentName": "CNC 머신",
+        "startTime": "2024-10-16T09:00:00",
+        "endTime": "2024-10-16T17:00:00",
+        "status": "진행 중"
+    }
+]
+
+
+
+    2. 특정 생산 기록 조회
+Get     /api/data/production-history/{id}
+요청: 없음
+응답:
+{
+    "jobId": 1,
+    "jobName": "생산 계획 1",
+    "equipmentName": "3D 프린터",
+    "startTime": "2024-10-15T10:00:00",
+    "endTime": "2024-10-15T18:00:00",
+    "status": "완료"
+}
+
+
+
+    3. 데이터 분석 결과 조회
+Get     /api/data/analysis-results
+요청: 없음
+응답:
+{
+    "totalJobs": 10,
+    "completedJobs": 8,
+    "failedJobs": 1,
+    "inProgressJobs": 1,
+    "averageCompletionTime": "8시간"
+}
+
+
