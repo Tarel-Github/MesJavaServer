@@ -3,10 +3,15 @@ spring:
     web-application-type: servlet  # 또는 `reactive`로 설정 가능
 
   datasource:
-    url: jdbc:mariadb://localhost:3306/mes   # MariaDB 데이터베이스 URL (DB 이름: mes)
-    username: root                  # MariaDB 사용자명
-    password: 12345                  # MariaDB 비밀번호
-    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://localhost:3306/mes   # MariaDB 데이터베이스 URL (DB 이름: mes)
+    url: ${DB_URL}
+    username: ${DB_USER}                  # MariaDB 사용자명
+    password: ${DB_PASSWORD}                  # MariaDB 비밀번호
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #driver-class-name: org.mariadb.jdbc.Driver
+
+  profiles:
+    include: secret, temp # application-temp
 
   jpa:
     hibernate:
